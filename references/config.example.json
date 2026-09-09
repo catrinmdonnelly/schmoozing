@@ -1,0 +1,67 @@
+{
+  "_comment": "schmoozing config. Copy this, edit it, save it as ./schmoozing.json, ./schmoozing.config.json, ~/.config/schmoozing/config.json, or anywhere you like with $SCHMOOZING_CONFIG pointing at it. Keep it out of any repo, since it names your CRM and your credentials.",
+
+  "_destination": "One of three shapes. google_sheet writes through this skill's script. csv appends to schmoozing-captures.csv in the working directory, and is also what you get with no destination at all. connector means the row is written by whatever Notion, Airtable or HubSpot connector the user already has attached, with the script only mapping the row. See references/connect.md.",
+  "destination": {
+    "type": "google_sheet",
+    "sheet_id": "PUT_YOUR_GOOGLE_SHEET_ID_HERE",
+    "worksheet": "Contacts",
+    "credentials": "~/.secrets/service-account.json",
+    "insert_at": "top"
+  },
+
+  "_destination_csv_example": {"type": "csv"},
+
+  "_destination_connector_example": {
+    "type": "connector",
+    "target": "Contacts database, id 24f1a...",
+    "tool_hint": "the attached connector, one record per contact",
+    "learned": {
+      "search_with": "how to search this destination for a duplicate, email first",
+      "field_types": "which fields are selects, dates, URLs or relations, and what they accept",
+      "gotchas": "anything that cost a failed write the first time"
+    }
+  },
+
+  "_columns": "Left side is the exact column header in your sheet. Right side is the card field. Headers are matched by name, so the order of columns in the sheet does not matter and can change.",
+  "columns": {
+    "Company": "company",
+    "Contact": "name",
+    "Role": "job_title",
+    "Sector": "sector",
+    "Location": "location",
+    "Email": "email",
+    "LinkedIn": "linkedin",
+    "Source": "source",
+    "Last touch": "met_date",
+    "Notes": "notes",
+    "Phone": "phone",
+    "Website": "website",
+    "Fit": "fit",
+    "Unverified": "unverified"
+  },
+
+  "_defaults": "Written into those columns when the card leaves them empty.",
+  "defaults": {
+    "Status": "MET"
+  },
+
+  "create_missing_columns": true,
+
+  "_warn_tabs": "Tabs that mean stop and read before contacting anyone: archived, lost, do not contact.",
+  "warn_tabs": ["Archive", "Do not contact"],
+
+  "_skip_tabs": "Tabs the duplicate check should ignore, for example instructions or reference tabs that are not records.",
+  "skip_tabs": ["How to use this"],
+
+  "_research": "country decides where size and ownership evidence comes from. UK means Companies House via scripts/uk_companies_house.py, free and definitive. US means general search, the state Secretary of State, and SEC EDGAR for public companies, because there is no national register. Anything else means search first and only chase a register if it is free and quick. depth is quick, standard or deep.",
+  "research": {
+    "depth": "standard",
+    "country": "UK"
+  },
+
+  "_fit_profile": "Who is worth pursuing and who is not. Written in plain sentences, because the model reads it, not a parser. This is the part that makes the verdict useful, so be specific and include the disqualifiers you have actually paid for.",
+  "fit_profile": "Describe your ideal customer here: size, ownership, sector shape, and the problem you solve. Then list the disqualifiers, the kinds of business that have never bought from you however promising they looked.",
+
+  "follow_up": "Describe your cadence here, for example: day 0 a soft ask, day 7 something you found out about their business, day 21 a clean either-or, then a diarised return at 90 days."
+}

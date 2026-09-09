@@ -1,0 +1,13 @@
+{
+  "name": "schmoozing",
+  "description": "Turn a photo of a business card into a researched CRM record: reads the card, cross-checks every claim, researches the person and the business, files it with a fit verdict and a next action.",
+  "version": "1.7.0",
+  "author": {
+    "name": "Catrin Donnelly",
+    "url": "https://github.com/catrinmdonnelly"
+  },
+  "homepage": "https://github.com/catrinmdonnelly/schmoozing",
+  "repository": "https://github.com/catrinmdonnelly/schmoozing",
+  "license": "MIT",
+  "keywords": ["crm", "business-cards", "networking", "sales", "research", "lead-capture"]
+}

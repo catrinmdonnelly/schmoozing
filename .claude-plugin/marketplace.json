@@ -1,0 +1,19 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "name": "schmoozing",
+  "owner": {
+    "name": "Catrin Donnelly",
+    "url": "https://github.com/catrinmdonnelly"
+  },
+  "description": "Business card to researched CRM record.",
+  "plugins": [
+    {
+      "name": "schmoozing",
+      "source": "./",
+      "description": "Photograph a business card and get a researched CRM record with a fit verdict and a next action.",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["crm", "business-cards", "networking", "sales", "research"]
+    }
+  ]
+}

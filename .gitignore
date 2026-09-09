@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+schmoozing-captures.csv
+schmoozing-learned.jsonl
+.schmoozing.json
+schmoozing.config.json
+.secrets/
+*.json.key
