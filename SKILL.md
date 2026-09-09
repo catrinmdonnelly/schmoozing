@@ -2,7 +2,7 @@
 name: schmoozing
 description: "Turn a photo of a business card into a researched CRM record. Reads the card, verifies the details, checks whether the contact is already on file, finds their LinkedIn profile and company website, runs a short background check on the person and the business, then writes one row into the configured CRM with a next action. Use when the user shares a photo of a business card, says 'cards from the event', 'scan this card', 'add this contact', 'I met someone at', 'networking event', 'here's a card', 'log this person', or drops a pile of card photos after a conference. For prepping a specific meeting rather than filing a new contact, see meeting-prep."
 metadata:
-  version: 1.7.0
+  version: 1.7.1
 ---
 
 # Schmoozing
