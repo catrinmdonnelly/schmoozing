@@ -413,7 +413,7 @@ _NUMERICISH = re.compile(r'[0-9 ()+\-./]+')
 def _needs_quoting(text):
     if text[:1] in ('=', '+', '-', '@'):
         return True
-    # "07700900123" became 7939508778 and "0000" became 0. A leading zero on a
+    # "07700900123" became 7700900123 and "0000" became 0. A leading zero on a
     # number is never decoration on a business card, it is part of the number.
     return bool(text[:1] == '0' and _NUMERICISH.fullmatch(text))
 
